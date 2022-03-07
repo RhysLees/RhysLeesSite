@@ -17,8 +17,30 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+        <x-jet-banner />
+
+        <div class="min-h-screen bg-gray-100">
+            @if (!in_array(request()->route()->getName(), ['login', 'register', 'password.request', 'verification.notice', 'two-factor.login']))
+                @livewire('navigation-menu')
+            @endif
+
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+
+            @if (!in_array(request()->route()->getName(), ['login', 'register', 'password.request', 'verification.notice', 'two-factor.login']))
+                @include('footer')
+            @endif
         </div>
     </body>
 </html>
