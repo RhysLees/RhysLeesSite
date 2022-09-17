@@ -16,7 +16,10 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body>
+    <body
+        x-data="{scrolledFromTop: false}"
+        @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+    >
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
