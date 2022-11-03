@@ -23,9 +23,9 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @if (!in_array(request()->route()->getName(), ['login', 'register', 'password.request', 'verification.notice', 'two-factor.login']))
+            {{-- @if (!in_array(request()->route()->getName(), ['login', 'register', 'password.request', 'verification.notice', 'two-factor.login']))
                 @livewire('navigation-menu')
-            @endif
+            @endif --}}
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -41,9 +41,9 @@
                 {{ $slot }}
             </main>
 
-            @if (!in_array(request()->route()->getName(), ['login', 'register', 'password.request', 'verification.notice', 'two-factor.login']))
+            {{-- @if (!in_array(request()->route()->getName(), ['login', 'register', 'password.request', 'verification.notice', 'two-factor.login']))
                 @include('footer')
-            @endif
+            @endif --}}
         </div>
     </body>
 </html>
