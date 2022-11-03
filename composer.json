@@ -8,10 +8,6 @@
         "nova":{
             "type": "composer",
             "url": "https://nova.laravel.com"
-        },
-        "nova-about":{
-            "type": "path",
-            "url": "../../Packages/rhyslees/nova-about"
         }
     },
     "require": {
